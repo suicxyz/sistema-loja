@@ -1,0 +1,35 @@
+
+
+# GET http://127.0.0.1:3001/api/employees/64f41e1e9badae2266354726 HTTP/1.1
+
+# Register (employe)
+# POST http://127.0.0.1:3000/api/employees HTTP/1.1
+# content-type: application/json
+
+# {
+#   "name": "Vinícius Trindade",
+#   "username": "trindade",
+#   "phonenumber": 13997180003,
+#   "password": "0412841407",
+#   "role": "Administrador"
+# }
+
+
+# Sign in
+# POST http://127.0.0.1:3001/api/auth HTTP/1.1
+# content-type: application/json
+
+# {
+#   "username": "trindade",
+#   "password": "0412841407"
+# }
+
+# GET http://127.0.0.1:3001/api/customers HTTP/1.1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjY3MTY2NDkwMGFmZjdlYjczYTMzOSIsIm5hbWUiOiJWaW7DrWNpdXMgVHJpbmRhZGUiLCJpYXQiOjE2OTM5NjAxMzIsImV4cCI6MTY5NDAwMzMzMn0.sDy31QJlY-gtzwu_B-8U08_6yN5OvZ9NMyXJvfFKs7U
+
+# Get session
+GET http://127.0.0.1:3001/api/auth/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjY3MTY2NDkwMGFmZjdlYjczYTMzOSIsIm5hbWUiOiJWaW7DrWNpdXMgVHJpbmRhZGUiLCJ1c2VybmFtZSI6InRyaW5kYWRlIiwiaWF0IjoxNjkzOTY5MTE0LCJleHAiOjE2OTQwMTIzMTR9.NZ7wlSh931BxnTK-Vz3pRTrM_YgJvXe8fS5a31J3egk
+
+# Sign out
+# DELETE http://127.0.0.1:3001/api/auth/64f41e1e9badae2266354726 HTTP/1.1

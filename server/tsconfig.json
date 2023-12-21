@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+		"lib": ["es2022"],
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"rootDir": "./src",
+		"baseUrl": ".",
+		"typeRoots": ["./node_modules/@types", "./src/interfaces/types"],
+		"removeComments": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+		"paths": {
+			"@config": ["./src/config/index.ts"],
+			"@controllers": ["./src/api/controllers/index.ts"],
+			"@models": ["./src/api/models/index.ts"]
+		}
+  },
+  "include": ["src/**/*"]
+}
