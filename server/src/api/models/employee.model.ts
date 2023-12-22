@@ -1,3 +1,4 @@
+import { NextFunction } from "express";
 import mongoose from "../helpers/database";
 
 import bcjs from "bcryptjs";
@@ -8,17 +9,17 @@ const EmployeeSchema = new mongoose.Schema({
 		trim: true,
 		require: true
 	},
-  username: {
+	username: {
 		type: String,
 		trim: true,
 		require: true
 	},
-  password: {
-    type: String,
-    trim: true,
-    require: true,
-    select: false
-  },
+	password: {
+		type: String,
+		trim: true,
+		require: true,
+		select: false
+	},
 	phonenumber: {
 		type: Number,
 		trim: true,
@@ -36,7 +37,7 @@ const EmployeeSchema = new mongoose.Schema({
 	}
 });
 
-EmployeeSchema.pre("save", async function(next: any) {
+EmployeeSchema.pre("save", async function (next: NextFunction) {
 	this.password = await bcjs.hash(this.password, 16);
 	next();
 });
