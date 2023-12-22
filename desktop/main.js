@@ -11,7 +11,7 @@ function createWindow () {
   })
 
   win.setMenu(null);
-  win.loadURL("http://192.168.1.3:3000");
+  win.loadURL("http://localhost:3000");
 }
 
 app.whenReady().then(() => {
