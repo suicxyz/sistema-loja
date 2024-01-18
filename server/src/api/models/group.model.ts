@@ -4,7 +4,13 @@ const GroupSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		trim: true,
-		require: true
+		required: true
+	},
+	type: {
+		type: mongoose.SchemaTypes.ObjectId,
+		ref: "Type",
+		trim: true,
+		required: true
 	},
 	createdAt: {
 		type: Date,

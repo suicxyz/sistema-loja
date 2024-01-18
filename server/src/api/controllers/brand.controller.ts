@@ -5,7 +5,7 @@ import { Brand } from "@models";
 export default new (class BrandController {
   async list (req: Request, res: Response): Promise<Response> {
     try {
-      const brands = await Brand.find();
+      const brands = await Brand.find().populate("group");
 
       return res.json({ brands });
     } catch (e) {
@@ -21,7 +21,7 @@ export default new (class BrandController {
       if (!uid)
         throw new Error("ID do marca não especificado.");
 
-      const brand = await Brand.findById(uid);
+      const brand = await Brand.findById(uid).populate("group");
 
       return res.status(200).json({ brand });
 
@@ -43,7 +43,7 @@ export default new (class BrandController {
       if (!name)
         throw new Error("Especifique o nome.");
 
-      brand = await Brand.create({ name });
+      const brand = await Brand.create({ name });
 
       return res.status(200).json({ brand });
     } catch (e) {

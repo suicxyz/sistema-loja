@@ -8,7 +8,7 @@ import Create from "@/lib/actions/products/create";
 import Report from "@/lib/actions/products/report";
 import Purchase from "@/lib/actions/products/purchase";
 
-function Products() {
+function Products({ user }) {
 
   const [toggleState, setToggleState] = useState(1);
 
@@ -17,7 +17,7 @@ function Products() {
   }
 
   function handleRender() {
-    if (toggleState == 1) return (<section><Search/></section>);
+    if (toggleState == 1) return (<section><Search user={user}/></section>);
     if (toggleState == 2) return (<section><Create/></section>);
     if (toggleState == 3) return (<section><Report/></section>);
     if (toggleState == 4) return (<section><Purchase/></section>);

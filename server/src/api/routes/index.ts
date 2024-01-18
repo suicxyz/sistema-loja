@@ -1,19 +1,19 @@
 import { Router } from "express";
 
-import { CustomerC, EmployeeC, AuthC, ProductC, GroupC, TypeC, BrandC, VendorC } from "@controllers";
+import { CustomerC, EmployeeC, AuthC, ProductC, GroupC, TypeC, BrandC, VendorC, SalesC } from "@controllers";
 import AuthM from "../middlewares/auth.middleware";
 
 const router = Router();
 
 //#region Clientes
-router.get("/api/customers/", AuthM, CustomerC.list);
-router.get("/api/customers/:uid", AuthM, CustomerC.get);
-router.post("/api/customers/", AuthM, CustomerC.create);
+router.get("/api/customers/", CustomerC.list);
+router.get("/api/customers/:uid", CustomerC.get);
+router.post("/api/customers/", CustomerC.create);
 //#endregion
 
 //#region Funcionários
-router.get("/api/employees/", AuthM, EmployeeC.list);
-router.get("/api/employees/:uid", AuthM, EmployeeC.get);
+router.get("/api/employees/", EmployeeC.list);
+router.get("/api/employees/:uid", EmployeeC.get);
 router.post("/api/employees/", EmployeeC.create);
 //#endregion
 
@@ -23,35 +23,46 @@ router.get("/api/products/:uid", ProductC.get);
 router.post("/api/products", ProductC.create);
 
 //#region Grupos
-router.get("/api/group", GroupC.list);
-router.get("/api/group/:uid", GroupC.get);
-router.post("/api/group", GroupC.create);
+router.get("/api/groups", GroupC.list);
+router.get("/api/groups/:uid", GroupC.get);
+router.post("/api/groups", GroupC.create);
+router.put("/api/groups/:uid", GroupC.update);
+router.delete("/api/groups/:uid", GroupC.delete);
 //#endregion
 
 //#region Tipos
-router.get("/api/type", TypeC.list);
-router.get("/api/type/:uid", TypeC.get);
-router.post("/api/type", TypeC.create);
+router.get("/api/types", TypeC.list);
+router.get("/api/types/:uid", TypeC.get);
+router.post("/api/types", TypeC.create);
+router.put("/api/types/:uid", TypeC.update);
+router.delete("/api/types/:uid", TypeC.delete);
 //#endregion
 
 //#region Marcas
-router.get("/api/brand", BrandC.list);
-router.get("/api/brand/:uid", BrandC.get);
-router.post("/api/brand", BrandC.create);
+router.get("/api/brands", BrandC.list);
+router.get("/api/brands/:uid", BrandC.get);
+router.post("/api/brands", BrandC.create);
+router.put("/api/brands/:uid", BrandC.update);
+router.delete("/api/brands/:uid", BrandC.delete);
 //#endregion
 
 //#region Fornecedores
-router.get("/api/vendor", VendorC.list);
-router.get("/api/vendor/:uid", VendorC.get);
-router.post("/api/vendor", VendorC.create);
+router.get("/api/vendors", VendorC.list);
+router.get("/api/vendors/:uid", VendorC.get);
+router.post("/api/vendors", VendorC.create);
+router.put("/api/vendors/:uid", VendorC.update);
+router.delete("/api/vendors/:uid", VendorC.delete);
 //#endregion
 
 //#endregion
 
 //#region Autenticação
-router.get("/api/auth/", AuthM, AuthC.getSession);
+router.get("/api/auth/", AuthC.getSession);
 router.post("/api/auth/", AuthC.createSession);
-router.delete("/api/auth/:token", AuthM, AuthC.destroySession);
+router.delete("/api/auth/:token", AuthC.destroySession);
 //#endregion
+
+router.get("/api/sales", SalesC.list);
+router.post("/api/sales", SalesC.create);
 
 export default router;

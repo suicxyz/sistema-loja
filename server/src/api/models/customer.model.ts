@@ -6,23 +6,22 @@ const CustomerSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		trim: true,
-		require: true
+		required: true
 	},
 	cpf: {
-		type: Number,
+		type: String,
 		trim: true,
-		require: true,
+		required: true,
 		unique: true
 	},
 	phonenumber: {
 		type: Number,
 		trim: true,
-		reuire: true,
+		required: true,
 	},
 	email: {
 		type: String,
 		trim: true,
-		require: true
 	},
 	createdAt: {
 		type: Date,

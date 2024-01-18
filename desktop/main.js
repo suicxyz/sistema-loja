@@ -5,12 +5,11 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    autoHideMenuBar: true,
+    // autoHideMenuBar: true,
     // fullscreen: true,
     center: true,
   })
 
-  win.setMenu(null);
   win.loadURL("http://localhost:3000");
 }
 

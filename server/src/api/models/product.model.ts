@@ -4,51 +4,51 @@ const ProductSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		trim: true,
-		require: true
+		required: true
 	},
 	description: {
 		type: String,
 		trim: true,
-		require: true
+		required: true
 	},
 	type: {
 		type: mongoose.SchemaTypes.ObjectId,
 		ref: "Type",
 		trim: true,
-		require: true
+		required: true
 	},
 	group: {
 		type: mongoose.SchemaTypes.ObjectId,
 		ref: "Group",
 		trim: true,
-		require: true
+		required: true
 	},
 	brand: {
 		type: mongoose.SchemaTypes.ObjectId,
 		ref: "Brand",
 		trim: true,
-		require: true
+		required: true
 	},
 	vendor: {
 		type: mongoose.SchemaTypes.ObjectId,
 		ref: "Vendor",
 		trim: true,
-		require: true
+		required: true
 	},
 	purchasePrice: {
 		type: Number,
 		trim: true,
-		require: true
+		required: true
 	},
 	sellPrice: {
 		type: Number,
 		trim: true,
-		require: true
+		required: true
 	},
 	active: {
 		type: Boolean,
 		trim: true,
-		require: true,
+		required: true,
 		default: true
 	},
 	createdAt: {

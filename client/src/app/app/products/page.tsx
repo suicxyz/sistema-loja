@@ -24,7 +24,7 @@ export default function Products() {
 
   return (
     <Layout user={user}>
-      <ProductsP/>
+      <ProductsP user={user}/>
     </Layout>
   )
 }

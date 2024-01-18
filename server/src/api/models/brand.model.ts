@@ -4,7 +4,13 @@ const BrandSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		trim: true,
-		require: true
+		required: true
+	},
+	group: {
+		type: mongoose.SchemaTypes.ObjectId,
+		ref: "Group",
+		trim: true,
+		required: true
 	},
 	createdAt: {
 		type: Date,

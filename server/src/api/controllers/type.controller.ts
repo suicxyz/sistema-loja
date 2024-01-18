@@ -43,7 +43,7 @@ export default new (class TypeController {
       if (!name)
         throw new Error("Especifique o nome.");
 
-      type = await Type.create({ name });
+      const type = await Type.create({ name });
 
       return res.status(200).json({ type });
     } catch (e) {

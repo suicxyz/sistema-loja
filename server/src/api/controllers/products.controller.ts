@@ -5,7 +5,7 @@ import { Product } from "@models";
 export default new (class ProductController {
 	async list (req: Request, res: Response): Promise<Response> {
 		try {
-			const products = await Product.find();
+			const products = await Product.find().populate(["type", "group", "brand", "vendor"]);		
 
 			return res.json({ products });
 		} catch (e) {
@@ -21,7 +21,7 @@ export default new (class ProductController {
 			if (!uid)
 				throw new Error("ID do produto não especificado.");
 
-			const product = await Product.findById(uid);
+			const product = await Product.findById(uid).populate("type,group,brand,vendor");
 
 			return res.status(200).json({ product });
 

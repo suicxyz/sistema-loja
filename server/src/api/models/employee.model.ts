@@ -7,28 +7,28 @@ const EmployeeSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		trim: true,
-		require: true
+		required: true
 	},
 	username: {
 		type: String,
 		trim: true,
-		require: true
+		required: true
 	},
 	password: {
 		type: String,
 		trim: true,
-		require: true,
+		required: true,
 		select: false
 	},
 	phonenumber: {
 		type: Number,
 		trim: true,
-		require: true,
+		required: true,
 	},
 	role: {
 		type: String,
 		trim: true,
-		require: true,
+		required: true,
 		enum: ["Vendedor", "Administrador"]
 	},
 	createdAt: {
